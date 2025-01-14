@@ -1,0 +1,3 @@
+circuitpython-stubs
+adafruit-circuitpython-dht
+adafruit-circuitpython-minimqtt
