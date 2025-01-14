@@ -32,7 +32,7 @@ while True:
         temp = dht.temperature
         assert temp
         mqtt_client.publish('home/temperature', temp)
-    except RuntimeError:
+    except (RuntimeError, AssertionError):
         # Reading sensor failed, retry
         time.sleep(2)
     else:
