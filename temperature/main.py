@@ -31,7 +31,10 @@ while True:
     try:
         temp = dht.temperature
         assert temp
+        humidity = dht.humidity
+        assert humidity
         mqtt_client.publish('home/temperature', temp)
+        mqtt_client.publish('home/humidity', humidity)
     except (RuntimeError, AssertionError):
         # Reading sensor failed, retry
         time.sleep(2)
